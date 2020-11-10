@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TD3</string>
+    <string name="exercice_1">EXERCICE 1</string>
+    <string name="exercice_2">EXERCICE 2</string>
+    <string name="exercice_3">EXERCICE 3</string>
+    <string name="result">RESULTAT</string>
+    <string name="lancer">Lancer le dé</string>
+</resources>
