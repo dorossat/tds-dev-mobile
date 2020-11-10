@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ThirdExercice extends AppCompatActivity {
     TextView result;
-    EditText nombre;
+    EditText number;
     Button btn_lancer;
 
     @Override
@@ -20,13 +20,18 @@ public class ThirdExercice extends AppCompatActivity {
         setContentView(R.layout.ex03);
 
         result = findViewById(R.id.result);
-        nombre = findViewById(R.id.nombre);
+        number = findViewById(R.id.nombre);
         btn_lancer = findViewById(R.id.btn);
 
         btn_lancer.setOnClickListener(v -> {
-            Toast.makeText(ThirdExercice.this, "Dé lancé !", Toast.LENGTH_LONG).show();
-            int nombre =  (int) (Math.random() * Integer.parseInt(this.nombre.toString())) + 1;
-            this.result.setText(String.valueOf(nombre));
+            // Toast.makeText(ThirdExercice.this, "Dé lancé !", Toast.LENGTH_LONG).show();
+            int value;
+            if (this.number.getText().toString().equals("")) {
+                 value =  (int) (Math.random() * 10) + 1;
+            } else {
+                 value =  (int) (Math.random() * Integer.parseInt(this.number.getText().toString())) + 1;
+            }
+            this.result.setText(String.valueOf(value));
         });
     }
 }
