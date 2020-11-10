@@ -11,14 +11,14 @@
         android:id="@+id/nombre"
         android:layout_width="162dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:textSize="15dp"
-        android:inputType="number"
         android:hint="Nombre de faces"
+        android:inputType="number"
+        android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -30,23 +30,39 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/result1"
         android:layout_width="162dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center"
-        android:textColor="#025704"
         android:hint="@string/result"
+        android:textColor="#025704"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn"
-        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/result2"
+        android:layout_width="162dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:hint="@string/result"
+        android:textColor="#025704"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
