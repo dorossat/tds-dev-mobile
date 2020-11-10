@@ -4,4 +4,21 @@
     <string name="bt2">Annuler</string>
     <string name="bt3">Annuler tout</string>
     <string name="password">Mot de passe</string>
+    <string name="entree">Entrée</string>
+    <string name="principale">Plat principal</string>
+    <string name="fromage">Fromage</string>
+    <string name="fruit">Fruit</string>
+    <string name="midi">Midi</string>
+    <string name="soir">Soir</string>
+    <string name="valider">Valider</string>
+    <string name="annuler">Annuler</string>
+    <string name="repas">Saisir un repas</string>
+    <string name="date">Date</string>
+    <string name="time">Heure</string>
+    <string name="spinner">Spinner</string>
+    <string name="degage">Parmi dégagé</string>
+    <string name="couvert">Couvert</string>
+    <string name="pluvieux">Pluvieux</string>
+    <string name="meteo">Météo</string>
+    <string name="exercices">Exercices</string>
 </resources>
