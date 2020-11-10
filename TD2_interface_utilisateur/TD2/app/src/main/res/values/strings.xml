@@ -3,4 +3,5 @@
     <string name="bt1">Ok</string>
     <string name="bt2">Annuler</string>
     <string name="bt3">Annuler tout</string>
+    <string name="password">Mot de passe</string>
 </resources>
