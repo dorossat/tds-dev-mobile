@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, n +"! = "+f);
     }
 
-    private int factorielle(int n)
-    {
+    private int factorielle(int n) {
         int r;
         if (n > 1) {
             int fnm1 = factorielle(n-1);
@@ -34,4 +33,16 @@ public class MainActivity extends AppCompatActivity {
         }
         return r;
     }
+
+    /*protected  void onStart() {
+        super.onStart();
+        String TAG = "Message";
+        Log.i(TAG, "Hello from onStart method");
+    }
+
+    protected  void onResume() {
+        super.onResume();
+        String TAG = "Message";
+        Log.i(TAG, "Hello from onResume method");
+    }*/
 }
