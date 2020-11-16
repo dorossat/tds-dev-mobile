@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             if ((login.equals(this.myUsername)) && (pswd.equals(this.myPassword))) {
                 Intent intent  = new Intent(LoginActivity.this, NewsActivity.class);
                 startActivity(intent);
+                finish();
             } else {
                 message.setText("Username ou mot de passe incorrect !");
             }
