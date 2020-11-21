@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/news"
-        android:layout_width="201dp"
-        android:layout_height="69dp"
+        android:layout_width="226dp"
+        android:layout_height="62dp"
         android:gravity="center"
         android:text="@string/news"
         android:textColor="#182CDF"
@@ -35,15 +35,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/news" />
 
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="223dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/my_second_button"
+        android:text="@string/about"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details" />
+
     <Button
         android:id="@+id/logout"
         android:layout_width="216dp"
         android:layout_height="71dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="328dp"
         android:background="@drawable/my_button"
         android:text="@string/logout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintLeft_toRightOf="@+id/details"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/news" />
