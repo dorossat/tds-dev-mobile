@@ -3,7 +3,6 @@ package com.example.td4;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailsActivity extends AppCompatActivity {
     Button details;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

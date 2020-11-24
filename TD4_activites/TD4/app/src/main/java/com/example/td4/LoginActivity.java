@@ -15,10 +15,10 @@ public class LoginActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private TextView message;
+
+    private SettingsActivity settings;
     Button btn;
 
-    private String myUsername = "hhamza";
-    private String myPassword = "Hamza9623";
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -26,6 +26,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         setTitle(getLocalClassName());
+
+        // Le contexte de l'application
+        settings = (SettingsActivity) getApplicationContext();
 
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
@@ -36,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             String login = String.valueOf(username.getText());
             String pswd = String.valueOf(password.getText());
 
-            if ((login.equals(this.myUsername)) && (pswd.equals(this.myPassword))) {
+            if ((login.equals(this.settings.getUsername())) && (pswd.equals(this.settings.getPassword()))) {
                 Intent intent  = new Intent(LoginActivity.this, NewsActivity.class);
                 startActivity(intent);
                 finish();
