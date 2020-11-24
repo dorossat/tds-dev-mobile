@@ -1,35 +1,31 @@
 package com.example.td4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Application;
-import android.os.Bundle;
 
 public class SettingsActivity extends Application {
     private String username = "hamza@hramchi.com";
     private String password = "hamza9623";
+    private String login;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        this.login = null;
     }
 
     public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+        return this.username;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getLogin() {
+        return this.login;
     }
 
-
-
+    public void setLogin(String login) {
+        this.login = login;
+    }
 }
