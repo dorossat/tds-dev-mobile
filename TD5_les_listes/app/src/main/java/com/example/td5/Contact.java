@@ -5,8 +5,9 @@ public class Contact {
     public String prenom;
     public String imageUrl;
 
-    public Contact(String nom, String prenom) {
+    public Contact(String nom, String prenom, String imageUrl) {
         this.nom = nom;
         this.prenom = prenom;
+        this.imageUrl = imageUrl;
     }
 }

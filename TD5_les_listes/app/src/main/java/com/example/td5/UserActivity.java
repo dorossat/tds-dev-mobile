@@ -18,11 +18,11 @@ public class UserActivity extends AppCompatActivity {
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
 
         // Initialisation
-        contacts.add(new Contact("HRAMCHI", "Hamza"));
-        contacts.add(new Contact("MOUSAOUI", "Yahya"));
-        contacts.add(new Contact("KHOUYA", "Ayoub"));
-        contacts.add(new Contact("ATABIT", "Meryeme"));
-        contacts.add(new Contact("EL HADRI", "Farah"));
+        contacts.add(new Contact("HRAMCHI", "Hamza", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("MOUSAOUI", "Yahya", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("KHOUYA", "Ayoub", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("ATABIT", "Meryeme", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("EL HADRI", "Farah", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
 
         // Create adapter + initialisation
         ContactsAdapter adapter = new ContactsAdapter(contacts);

@@ -1,6 +1,5 @@
 package com.example.td5;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
@@ -33,6 +33,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         firstName.setText(contact.nom);
         TextView lastName = holder.lastName;
         lastName.setText(contact.prenom);
+        ImageView image = holder.image;
+        Glide.with(holder.itemView).load(contact.imageUrl).into(image);;
     }
 
     @Override
