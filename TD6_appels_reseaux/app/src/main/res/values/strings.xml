@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TD6</string>
+    <string name="repo">Chercher un repo</string>
+    <string name="searchBtn">Lancer la recherche</string>
+    <string name="searchTitle">Resultat de la recherche</string>
+    <string name="userName">User name</string>
+    <string name="ID">ID : </string>
+    <string name="owner">Owner : </string>
+    <string name="searchResultTitle">Résultat de la recherche</string>
 </resources>

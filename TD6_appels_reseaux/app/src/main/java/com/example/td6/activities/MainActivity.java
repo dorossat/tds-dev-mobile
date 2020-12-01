@@ -2,6 +2,7 @@ package com.example.td6.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.td6.R;
@@ -15,11 +16,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         GithubService githubService = new Retrofit.Builder()
                 .baseUrl(GithubService.ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())

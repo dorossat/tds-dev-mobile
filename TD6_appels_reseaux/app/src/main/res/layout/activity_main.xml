@@ -6,13 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/auth"
+        android:layout_width="223dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Chercher un repertoire"
+        android:textColor="#0B1B53"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="261dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="50dp"
+        android:hint="Nom du repertoire"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auth" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="226dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="48dp"
+        android:drawableLeft="@mipmap/search"
+        android:text="@string/searchBtn"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

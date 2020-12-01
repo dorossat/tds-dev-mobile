@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4BB6F450"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="326dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/searchResultTitle"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:drawableLeft="@mipmap/github"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="405dp"
+        android:layout_height="364dp"
+        android:layout_marginTop="10dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.044">
+
+        <LinearLayout
+            android:id="@+id/firstL"
+            android:layout_width="184dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="140dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:background="@color/black"
+                android:contentDescription="TODO"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/ID"
+                android:textColor="#031E47"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/owner"
+                android:textColor="#031E47"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginStart="22dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@+id/firstL">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="- Nombre de repertoires(s)" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="20 "
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="- Private" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="False"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="- Type" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="User"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Description"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="189dp"
+            android:layout_height="72dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="7 Wonders Duel App with Unity3D 100% functional (MAC / IOS / ANDROID / DESKTOP)"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Commits"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="7"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Issues"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="150"
+            android:textStyle="bold" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="400dp"
+        android:layout_height="187dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout">
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
