@@ -1,4 +1,4 @@
-gpackage com.example.td6;
+package com.example.td6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
