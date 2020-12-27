@@ -1,7 +1,10 @@
 package com.example.td6.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,30 +19,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btn;
+    private EditText text;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        GithubService githubService = new Retrofit.Builder()
-                .baseUrl(GithubService.ENDPOINT)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(GithubService.class);
-        githubService.listRepos("hamza-hramchi").enqueue(new Callback<List<Repo>>() {
-            @Override
-            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
-                afficherRepos(response.body());
-            }
 
-            @Override
-            public void onFailure(Call<List<Repo>> call, Throwable t) {
-            }
+        btn = findViewById(R.id.btn);
+        text = findViewById(R.id.search);
+
+        btn.setOnClickListener(v -> {
+            String q = String.valueOf(text.getText());
+            Intent intent = new Intent(MainActivity.this, ReposActivity.class);
+            intent.putExtra("repos", q);
+            startActivity(intent);
         });
-    }
 
-    public void afficherRepos(List<Repo> repos) {
-        Toast.makeText(this, "Nombre de dépots : " + repos.size(), Toast.LENGTH_LONG).show();
     }
 
 }

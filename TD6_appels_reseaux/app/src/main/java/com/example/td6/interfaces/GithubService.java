@@ -1,6 +1,7 @@
 package com.example.td6.interfaces;
 
-import com.example.td6.activities.Repo;
+import com.example.td6.models.Repos;
+import com.example.td6.models.ReposSearch;
 
 import java.util.List;
 
@@ -10,11 +11,14 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface GithubService {
-    public static final String ENDPOINT = "https://api.github.com";
+    String ENDPOINT = "https://api.github.com";
 
     @GET("/users/{user}/repos")
-    Call<List<Repo>> listRepos(@Path("user") String user);
+    Call<List<Repos>> userRepos(@Path("user") String user);
 
     @GET("/search/repositories")
-    Call<List<Repo>> searchRepos(@Query("q") String query);
+    Call<List<Repos>> searchRepos(@Query("q") String query);
+
+    @GET("/search/repositories")
+    Call<ReposSearch> searchReposQuery(@Query("q") String query);
 }

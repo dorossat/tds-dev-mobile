@@ -7,4 +7,11 @@
     <string name="ID">ID : </string>
     <string name="owner">Owner : </string>
     <string name="searchResultTitle">Résultat de la recherche</string>
+    <string name="listRepo">La liste des repertoires</string>
+    <string name="name">Owner</string>
+    <string name="issues">Issues</string>
+    <string name="number">200</string>
+    <string name="commits">Commits</string>
+    <string name="language">Language</string>
+    <string name="java">JAVA</string>
 </resources>
