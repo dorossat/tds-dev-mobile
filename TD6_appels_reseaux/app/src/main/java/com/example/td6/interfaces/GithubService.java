@@ -1,5 +1,6 @@
 package com.example.td6.interfaces;
 
+import com.example.td6.models.Commit;
 import com.example.td6.models.Repos;
 import com.example.td6.models.ReposSearch;
 
@@ -21,4 +22,7 @@ public interface GithubService {
 
     @GET("/search/repositories")
     Call<ReposSearch> searchReposQuery(@Query("q") String query);
+
+    @GET("/repos/{user}/{repos}/commits")
+    Call<List<Commit>> getCommits(@Path("user") String user, @Path("repos") String repos);
 }

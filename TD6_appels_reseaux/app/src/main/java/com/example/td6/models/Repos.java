@@ -1,15 +1,16 @@
 package com.example.td6.models;
 
-import com.example.td6.activities.UserActivity;
 
 public class Repos {
-    private int id;
     private String name;
     private String fullName;
-    private String url;
-    private int issues;
     private String language;
-    private UserActivity owner;
+    private String url;
+    private String commits;
+    private int issues;
+    private int id;
+
+    private UserRepos owner;
 
 
     public int getId() {
@@ -20,11 +21,13 @@ public class Repos {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -60,11 +63,19 @@ public class Repos {
         this.language = language;
     }
 
-    public UserActivity getOwner() {
+    public UserRepos getOwner() {
         return owner;
     }
 
-    public void setOwner(UserActivity owner) {
+    public void setOwner(UserRepos owner) {
         this.owner = owner;
+    }
+
+    public String getCommits() {
+        return this.commits;
+    }
+
+    public void setCommits(String commits) {
+        this.commits = commits;
     }
 }

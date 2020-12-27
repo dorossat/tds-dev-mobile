@@ -28,6 +28,7 @@ public class ReposActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ReposAdapter reposAdapter;
     private String query;
+    private GithubService githubService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class ReposActivity extends AppCompatActivity {
             query = intent.getStringExtra("repos");
         }
 
-        GithubService githubService = new Retrofit.Builder()
+         githubService = new Retrofit.Builder()
                 .baseUrl(GithubService.ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -61,7 +62,7 @@ public class ReposActivity extends AppCompatActivity {
 
     public void afficherLesRepos(ReposSearch reposSearches) {
         this.reposList = reposSearches.getItems();
-        reposAdapter = new ReposAdapter(this.reposList);
+        reposAdapter = new ReposAdapter(this.reposList, githubService);
         recyclerView.setAdapter(reposAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

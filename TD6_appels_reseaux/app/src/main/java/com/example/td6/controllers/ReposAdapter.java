@@ -10,17 +10,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.td6.R;
+import com.example.td6.interfaces.GithubService;
+import com.example.td6.models.Commit;
 import com.example.td6.models.Repos;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> {
 
     private final List<Repos> reposList;
+    private final GithubService githubService;
 
-    public ReposAdapter(List<Repos> repos) {
+    public ReposAdapter(List<Repos> repos, GithubService githubService) {
         this.reposList = repos;
+        this.githubService = githubService;
     }
 
     @NonNull
@@ -38,6 +47,12 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
 
         ImageView avatar = holder.avatar;
 
+        Glide.with(holder.itemView)
+                .load(repos.getOwner().getAvatar_url())
+                .centerCrop()
+                .placeholder(R.mipmap.github)
+                .into(avatar);
+
         TextView owner = holder.owner;
         owner.setText(repos.getOwner().getLogin());
 
@@ -45,9 +60,23 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
         repository.setText(repos.getName());
 
         TextView issues = holder.issues;
-        issues.setText(repos.getissues());
+        issues.setText(String.valueOf(repos.getissues()));
 
         TextView commits = holder.commits;
+
+        githubService.getCommits(repos.getOwner().getLogin(), repos.getName()).enqueue(new Callback<List<Commit>>() {
+            @Override
+            public void onResponse(Call<List<Commit>> call, Response<List<Commit>> response) {
+                if (response.body() != null) {
+                    commits.setText(String.valueOf(getNbCommits(response.body())));
+                } else {
+                    commits.setText("0");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Commit>> call, Throwable t) { }
+        });
 
         TextView language = holder.language;
         language.setText(repos.getLanguage());
@@ -56,7 +85,8 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return this.reposList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -71,12 +101,18 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            avatar = itemView.findViewById(R.id.repos_avatar_owner);
-            owner = itemView.findViewById(R.id.repos_nom_owner);
-            repository = itemView.findViewById(R.id.repos_nom_repos);
-            issues = itemView.findViewById(R.id.repos_issues);
-            commits = itemView.findViewById(R.id.repos_commits);
-            language = itemView.findViewById(R.id.repos_language);
+            avatar = itemView.findViewById(R.id.avatar);
+            owner = itemView.findViewById(R.id.owner_name);
+            repository = itemView.findViewById(R.id.repos_name);
+            issues = itemView.findViewById(R.id.issues);
+            commits = itemView.findViewById(R.id.commits);
+            language = itemView.findViewById(R.id.language);
 
         }
     }
+
+    private int getNbCommits(List<Commit> commits) {
+        return commits.size();
+    }
+}
+
