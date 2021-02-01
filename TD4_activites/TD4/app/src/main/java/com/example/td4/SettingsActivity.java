@@ -4,7 +4,7 @@ import android.app.Application;
 
 public class SettingsActivity extends Application {
     private String username = "hamza@hramchi.com";
-    private String password = "hamza9623";
+    private String password = "hamza";
     private String login;
 
     @Override
